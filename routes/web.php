@@ -1,7 +1,10 @@
 <?php
-
+namespace App\Http\Controllers;
+// routes/web.php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Определение маршрутов для получения информации о сервере, клиенте и бд
+Route::get('/info/server', [InfoController::class, 'serverInfo']);
+Route::get('/info/client', [InfoController::class, 'clientInfo']);
+Route::get('/info/database', [InfoController::class, 'dbInfo']);
